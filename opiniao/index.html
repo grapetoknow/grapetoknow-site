@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-PT"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Grape to Know · A tua opinião</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Figtree:wght@400;600;700&display=swap">
+<style>
+:root{--bg:#1D131B;--cream:#FBF3E6;--mauve:#D9B9D9;--pink:#EBA6CF;--plum:#5E2750;--red:#D9283C;--line:rgba(217,185,217,.25)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--cream);font:16px/1.5 Figtree,system-ui,sans-serif}
+main{max-width:620px;margin:0 auto;padding:32px 16px 64px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.marca{font:800 26px Fraunces,serif;color:var(--pink);text-decoration:none}.marca i{font-style:italic;color:var(--cream);background:var(--red);padding:0 6px;border-radius:4px}
+.langs button{background:none;border:1px solid var(--line);color:var(--mauve);border-radius:8px;padding:6px 10px;font:600 13px Figtree;cursor:pointer;margin-left:4px}
+.langs button[aria-pressed=true]{background:var(--plum);color:var(--cream);border-color:var(--plum)}
+h1{font:800 34px/1.15 Fraunces,serif;margin:32px 0 8px}p.sub{color:var(--mauve);margin:0 0 28px}
+fieldset{border:1px solid var(--line);border-radius:14px;padding:18px;margin:0 0 16px}
+legend{font-weight:700;padding:0 6px}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.opts label{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer;min-height:44px}
+.opts input{accent-color:var(--pink)}
+textarea,input[type=text]{width:100%;margin-top:10px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:10px;color:var(--cream);font:16px Figtree;padding:12px}
+textarea{min-height:84px;resize:vertical}
+button.env{width:100%;background:var(--pink);color:var(--bg);border:0;border-radius:14px;padding:16px;font:700 17px Figtree;cursor:pointer;margin-top:8px}
+.ok{border:1px solid var(--pink);border-radius:14px;padding:24px;text-align:center}.ok h2{font:800 26px Fraunces,serif;margin:0 0 8px;color:var(--pink)}
+.ok a{color:var(--pink)}.erro{color:#ff9b9b}[hidden]{display:none!important}
+</style></head><body><main>
+<div class="top"><a class="marca" href="/">Grape <i>to</i> Know</a>
+<span class="langs"><button data-l="pt">PT</button><button data-l="en">EN</button><button data-l="es">ES</button></span></div>
+<h1 data-t="h1">A tua opinião</h1>
+<p class="sub" data-t="sub">Obrigado por testares o jogo. Cinco perguntas, dois minutos. A honestidade ajuda mais do que os elogios.</p>
+<form id="op" name="opiniao" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+<input type="hidden" name="form-name" value="opiniao">
+<p hidden><label>Não preencher: <input name="bot-field"></label></p>
+<input type="hidden" name="lingua" id="f-lingua"><input type="hidden" name="progresso" id="f-prog">
+<fieldset><legend data-t="nome">O teu nome</legend><input type="text" name="nome" id="f-nome" maxlength="40"></fieldset>
+<fieldset><legend data-t="q1">Percebeste sempre o que tinhas de fazer?</legend>
+<div class="opts"><label><input type="radio" name="percebeu" value="1" required>1</label><label><input type="radio" name="percebeu" value="2">2</label><label><input type="radio" name="percebeu" value="3">3</label><label><input type="radio" name="percebeu" value="4">4</label><label><input type="radio" name="percebeu" value="5">5</label></div>
+<small data-t="q1s" style="color:var(--mauve)">1 = nunca · 5 = sempre</small></fieldset>
+<fieldset><legend data-t="q2">As perguntas estavam…</legend>
+<div class="opts"><label><input type="radio" name="dificuldade" value="faceis"><span data-t="q2a">Fáceis demais</span></label><label><input type="radio" name="dificuldade" value="certas"><span data-t="q2b">Na medida certa</span></label><label><input type="radio" name="dificuldade" value="dificeis"><span data-t="q2c">Difíceis demais</span></label></div></fieldset>
+<fieldset><legend data-t="q3">Aprendeste alguma coisa nova? O quê?</legend><textarea name="aprendeu"></textarea></fieldset>
+<fieldset><legend data-t="q4">Voltavas a jogar amanhã?</legend>
+<div class="opts"><label><input type="radio" name="voltava" value="sim"><span data-t="sim">Sim</span></label><label><input type="radio" name="voltava" value="talvez"><span data-t="talvez">Talvez</span></label><label><input type="radio" name="voltava" value="nao"><span data-t="nao">Não</span></label></div>
+<textarea name="voltava-porque" data-tp="porque" placeholder="Porquê?"></textarea></fieldset>
+<fieldset><legend data-t="q5">Encontraste algum erro ou alguma coisa que te irritou?</legend><textarea name="erros"></textarea></fieldset>
+<button class="env" type="submit" data-t="env">Enviar a minha opinião</button>
+<p class="erro" id="erro" hidden data-t="erro">Não foi possível enviar. Tenta outra vez daqui a pouco.</p>
+</form>
+<div class="ok" id="ok" hidden><h2 data-t="okh">Obrigado!</h2><p data-t="okp">A tua opinião chegou. Vai ajudar a pôr o jogo melhor para quem vem a seguir.</p><p><a href="/" data-t="voltar">Voltar ao site</a></p></div>
+</main>
+<script>
+const T={en:{h1:"Your feedback",sub:"Thank you for testing the game. Five questions, two minutes. Honesty helps more than compliments.",nome:"Your name",q1:"Did you always understand what to do?",q1s:"1 = never · 5 = always",q2:"The questions were…",q2a:"Too easy",q2b:"Just right",q2c:"Too hard",q3:"Did you learn something new? What?",q4:"Would you play again tomorrow?",sim:"Yes",talvez:"Maybe",nao:"No",porque:"Why?",q5:"Did you find any mistake or anything that annoyed you?",env:"Send my feedback",erro:"It couldn't be sent. Please try again in a moment.",okh:"Thank you!",okp:"Your feedback arrived. It will help make the game better for the next players.",voltar:"Back to the site"},
+es:{h1:"Tu opinión",sub:"Gracias por probar el juego. Cinco preguntas, dos minutos. La sinceridad ayuda más que los elogios.",nome:"Tu nombre",q1:"¿Entendiste siempre lo que tenías que hacer?",q1s:"1 = nunca · 5 = siempre",q2:"Las preguntas eran…",q2a:"Demasiado fáciles",q2b:"En su punto",q2c:"Demasiado difíciles",q3:"¿Aprendiste algo nuevo? ¿Qué?",q4:"¿Volverías a jugar mañana?",sim:"Sí",talvez:"Quizás",nao:"No",porque:"¿Por qué?",q5:"¿Encontraste algún error o algo que te molestó?",env:"Enviar mi opinión",erro:"No se pudo enviar. Inténtalo de nuevo en un momento.",okh:"¡Gracias!",okp:"Tu opinión ha llegado. Ayudará a mejorar el juego para los siguientes jugadores.",voltar:"Volver al sitio"}};
+const PT={};document.querySelectorAll("[data-t]").forEach(e=>PT[e.dataset.t]=e.textContent);document.querySelectorAll("[data-tp]").forEach(e=>PT[e.dataset.tp]=e.placeholder);
+const ls=k=>{try{return localStorage.getItem(k)}catch(e){return null}};
+function lang(l){const d=l==="pt"?PT:T[l];document.documentElement.lang=l==="pt"?"pt-PT":l;
+ document.querySelectorAll("[data-t]").forEach(e=>e.textContent=d[e.dataset.t]);document.querySelectorAll("[data-tp]").forEach(e=>e.placeholder=d[e.dataset.tp]);
+ document.querySelectorAll(".langs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===l));document.getElementById("f-lingua").value=l;try{localStorage.setItem("gtk-lang",l)}catch(e){}}
+const q=new URLSearchParams(location.search).get("lang");let L=(q||ls("gtk-lang")||"pt").slice(0,2);if(!["pt","en","es"].includes(L))L="pt";lang(L);
+document.querySelectorAll(".langs button").forEach(b=>b.onclick=()=>lang(b.dataset.l));
+document.getElementById("f-nome").value=ls("gtk-nome")||"";
+const prog={};["gtk-niveis-uva","gtk-niveis-vinha","gtk-trilha","gtk-char"].forEach(k=>{const v=ls(k);if(v)prog[k]=v.slice(0,800)});document.getElementById("f-prog").value=JSON.stringify(prog);
+const f=document.getElementById("op");f.onsubmit=async e=>{e.preventDefault();document.getElementById("erro").hidden=true;
+ try{const r=await fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(new FormData(f)).toString()});if(!r.ok)throw 0;f.hidden=true;document.getElementById("ok").hidden=false;scrollTo(0,0)}
+ catch(err){document.getElementById("erro").hidden=false}};
+</script></body></html>
