@@ -1,11 +1,11 @@
 # Melhorias de SEO e UX (19 out 2026). Uso: python3 seo-ux-19out.py ficheiro.html [...]
 import sys, re
 META = {
- "pt": ("Grape to Know · Prova o que sabes de vinho",
+ "pt": ("Grape to Know · Prova o que sabes",
         "Perguntas rápidas e situações reais de sala, das castas às regiões de Portugal. Para quem trabalha com vinho, estuda ou simplesmente gosta. Prova o que sabes."),
- "en": ("Grape to Know · Taste what you know about wine",
+ "en": ("Grape to Know · Taste what you know",
         "Quick questions and real service situations, from grape varieties to the regions of Portugal. For people who work with wine, study it or simply love it. Taste what you know."),
- "es": ("Grape to Know · Demuestra lo que sabes de vino",
+ "es": ("Grape to Know · Demuestra lo que sabes",
         "Preguntas rápidas y situaciones reales de sala, de las castas a las regiones de Portugal. Para quien trabaja con vino, lo estudia o simplemente lo disfruta. Demuestra lo que sabes."),
 }
 U = "https://grapetoknow.com/"
