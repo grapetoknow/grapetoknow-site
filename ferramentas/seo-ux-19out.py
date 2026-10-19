@@ -1,12 +1,12 @@
 # Melhorias de SEO e UX (19 out 2026). Uso: python3 seo-ux-19out.py ficheiro.html [...]
 import sys, re
 META = {
- "pt": ("Grape to Know · O jogo para aprender vinho",
-        "Um jogo para aprender vinho em rondas curtas, das castas às regiões de Portugal. Para quem trabalha com vinho, estuda ou simplesmente gosta."),
- "en": ("Grape to Know · The game for learning wine",
-        "A game for learning wine in short rounds, from grape varieties to the regions of Portugal. For people who work with wine, study it or simply love it."),
- "es": ("Grape to Know · El juego para aprender vino",
-        "Un juego para aprender vino en rondas cortas, de las castas a las regiones de Portugal. Para quien trabaja con vino, lo estudia o simplemente lo disfruta."),
+ "pt": ("Grape to Know · Prova o que sabes de vinho",
+        "Perguntas rápidas e situações reais de sala, das castas às regiões de Portugal. Para quem trabalha com vinho, estuda ou simplesmente gosta. Prova o que sabes."),
+ "en": ("Grape to Know · Taste what you know about wine",
+        "Quick questions and real service situations, from grape varieties to the regions of Portugal. For people who work with wine, study it or simply love it. Taste what you know."),
+ "es": ("Grape to Know · Demuestra lo que sabes de vino",
+        "Preguntas rápidas y situaciones reales de sala, de las castas a las regiones de Portugal. Para quien trabaja con vino, lo estudia o simplemente lo disfruta. Demuestra lo que sabes."),
 }
 U = "https://grapetoknow.com/"
 HEAD = f'''<title>{META["pt"][0]}</title>
