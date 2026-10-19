@@ -634,10 +634,16 @@ const T = {
 // Endereço único do jogo: muda só aqui.
 // Até o jogo abrir (decisão da autora, 19 out 2026), os botões levam à lista de acesso antecipado.
 // No dia da abertura: JOGO_URL = "/jogo/" e voltar a pôr os textos "jogar", "mais" e "f-feito-p" a falar do jogo.
-const JOGO_URL = "#acesso";
+const JOGO_URL = "#form-t";
 const SITE_URL = "https://grapetoknow.com";
 document.querySelectorAll("[data-jogo]").forEach(a=>{ a.href = JOGO_URL;
-  if(JOGO_URL.startsWith("#")){ a.removeAttribute("target"); if(a.dataset.t==="f-feito-btn") a.style.display = "none"; } });
+  if(!JOGO_URL.startsWith("#")) return;
+  // até o jogo abrir: leva ao formulário e põe o cursor no nome; o botão ao lado do formulário e o do fim saem
+  a.removeAttribute("target");
+  if(a.dataset.t==="f-feito-btn" || a.closest(".faixa")) a.style.display = "none";
+  a.addEventListener("click", e=>{ const f = document.querySelector(JOGO_URL); if(!f) return; e.preventDefault();
+    f.scrollIntoView({behavior:"smooth", block:"start"}); const n = f.querySelector('input[name="nome"]');
+    if(n && n.offsetParent) setTimeout(()=>n.focus({preventScroll:true}), 450); }); });
 
 // Perguntas reais do jogo, nas três línguas: uva-1-s02 (Ruby) e uva-2-s02 (Tawny).
 // A ordem das opções é fixa aqui; no jogo é baralhada.
