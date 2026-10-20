@@ -56,7 +56,7 @@ button.env{width:100%;background:var(--pink);color:var(--bg);border:0;border-rad
 <button class="env" type="submit" data-t="env">Enviar a minha opinião</button>
 <p class="erro" id="erro" hidden data-t="erro">Não foi possível enviar. Tenta outra vez daqui a pouco.</p>
 </form>
-<div class="ok" id="ok" hidden><h2 data-t="okh">Obrigado!</h2><p data-t="okp">A tua opinião chegou. Vai ajudar a pôr o jogo melhor para quem vem a seguir.</p><p><a href="/" data-t="voltar">Voltar ao site</a></p></div>
+<div class="ok" id="ok" hidden><h2 data-t="okh">Obrigado!</h2><p><a href="/" data-t="voltar">Voltar ao site</a></p></div>
 </main>
 <script>
 const T={en:{h1:"Your feedback",sub:"Thank you for testing the game. Six questions, two minutes. Honesty helps more than compliments.",nome:"Your name",q0:"Before playing, how much did you know about wine?",q0a:"I'm just starting",q0b:"I knew a few things",q0c:"I study or work with wine",q1p:"If you gave 1, 2 or 3: at what moment did you not know what to do?",q2d:"They varied a lot",q5p:"If you remember, tell us which screen or question it was.",q1:"Did you always understand what to do?",q1s:"1 = never · 5 = always",q2:"The questions were…",q2a:"Too easy",q2b:"Just right",q2c:"Too hard",q3:"Did you learn something new, or understand better something you already knew? What?",q4:"Would you play again tomorrow or another day?",sim:"Yes",talvez:"Maybe",nao:"No",porque:"Why?",q5:"Did you find any mistake or anything that annoyed you?",env:"Send my feedback",erro:"It couldn't be sent. Please try again in a moment.",okh:"Thank you!",okp:"Your feedback arrived. It will help make the game better for the next players.",voltar:"Back to the site"},
@@ -71,6 +71,6 @@ document.querySelectorAll(".langs button").forEach(b=>b.onclick=()=>lang(b.datas
 document.getElementById("f-nome").value=ls("gtk-nome")||"";
 const prog={};["gtk-niveis-uva","gtk-niveis-vinha","gtk-trilha","gtk-char"].forEach(k=>{const v=ls(k);if(v)prog[k]=v.slice(0,800)});document.getElementById("f-prog").value=JSON.stringify(prog);
 const f=document.getElementById("op");f.onsubmit=async e=>{e.preventDefault();document.getElementById("erro").hidden=true;
- try{const r=await fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(new FormData(f)).toString()});if(!r.ok)throw 0;f.hidden=true;document.getElementById("ok").hidden=false;scrollTo(0,0)}
+ try{const r=await fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(new FormData(f)).toString()});if(!r.ok)throw 0;f.hidden=true;document.querySelector(".sub").hidden=true;document.getElementById("ok").hidden=false;scrollTo(0,0)}
  catch(err){document.getElementById("erro").hidden=false}};
 </script></body></html>
