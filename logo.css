@@ -1,0 +1,5 @@
+/* Logo oficial Grape to Know: pincel vermelho atrás do "to". Usar sempre este bloco (ver README). */
+.logo-gtk{font-family:Fraunces,serif;font-weight:800;font-size:var(--logo-size,28px);line-height:1;letter-spacing:-.025em;color:#FBF3E6;text-decoration:none;white-space:nowrap;font-variation-settings:"SOFT" 50,"WONK" 1,"opsz" 144;display:inline-flex;align-items:baseline;column-gap:.2em}
+.logo-gtk .logo-to{position:relative;display:inline-block;font-style:italic;font-weight:700;padding:0 .14em;isolation:isolate;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.logo-gtk .logo-to span{position:relative;z-index:1}
+.logo-gtk .pincel{position:absolute;z-index:0;left:-.06em;top:.22em;width:calc(100% + .14em);height:.86em;transform:rotate(-5deg);fill:#D9283C}

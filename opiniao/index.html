@@ -10,7 +10,6 @@
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--cream);font:16px/1.5 Figtree,system-ui,sans-serif}
 main{max-width:620px;margin:0 auto;padding:32px 16px 64px}
 .top{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.marca{font:800 26px Fraunces,serif;color:var(--pink);text-decoration:none}.marca i{font-style:italic;color:var(--cream);background:var(--red);padding:0 6px;border-radius:4px}
 .langs button{background:none;border:1px solid var(--line);color:var(--mauve);border-radius:8px;padding:6px 10px;font:600 13px Figtree;cursor:pointer;margin-left:4px}
 .langs button[aria-pressed=true]{background:var(--plum);color:var(--cream);border-color:var(--plum)}
 h1{font:800 34px/1.15 Fraunces,serif;margin:32px 0 8px}p.sub{color:var(--mauve);margin:0 0 28px}
@@ -30,13 +29,16 @@ textarea{min-height:84px;resize:vertical}
 button.env{width:100%;background:var(--pink);color:var(--bg);border:0;border-radius:14px;padding:16px;font:700 17px Figtree;cursor:pointer;margin-top:8px}
 .ok{border:1px solid var(--pink);border-radius:14px;padding:24px;text-align:center}.ok h2{font:800 26px Fraunces,serif;margin:0 0 8px;color:var(--pink)}
 .ok a{color:var(--pink)}
-body.feito h1{text-align:center;margin:14vh 0 14px;font:700 13px/1.2 Figtree,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--mauve)}
-body.feito .ok{border:0;padding:0;display:flex;flex-direction:column;align-items:center;gap:32px}
-body.feito .ok h2{font-size:clamp(44px,11vw,64px);line-height:1.05;margin:0}
-body.feito .ok p{margin:0}
+body.feito .top{justify-content:center}
+body.feito h1{text-align:center;margin:12vh 0 16px;font:700 13px/1.2 Figtree,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--mauve)}
+body.feito .ok{border:0;padding:0;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
+body.feito .ok h2{font-size:clamp(34px,9.5vw,56px);line-height:1.08;margin:0;max-width:11em;text-wrap:balance}
+body.feito .ok p{margin:0;max-width:28em;text-wrap:balance;font-size:18px}
+body.feito .ok .assin{color:var(--pink);font-weight:700;margin-top:-6px}
+body.feito .ok p:last-child{margin-top:12px}
 body.feito .ok a{display:inline-block;background:var(--pink);color:var(--bg);text-decoration:none;font:700 18px Figtree,sans-serif;border-radius:999px;padding:14px 28px}.erro{color:#ff9b9b}[hidden]{display:none!important}
-</style></head><body><main>
-<div class="top"><a class="marca" href="/">Grape <i>to</i> Know</a>
+</style><link rel="stylesheet" href="/logo.css"></head><body><main>
+<div class="top"><a class="logo-gtk" href="/" aria-label="Grape to Know"><span>Grape</span><i class="logo-to"><svg class="pincel" viewBox="0 0 120 60" preserveAspectRatio="none" aria-hidden="true"><path d="M6 20 C18 10 52 8 82 7 C96 6 108 6 116 9 L113 15 L118 19 L112 26 L117 31 L110 37 L114 43 C96 50 64 52 40 54 C26 55 14 56 4 52 L9 46 L2 41 L8 35 L3 29 Z"/></svg><span>to</span></i><span>Know</span></a>
 <span class="langs"><button data-l="pt">PT</button><button data-l="en">EN</button><button data-l="es">ES</button></span></div>
 <h1 data-t="h1">A tua opinião</h1>
 <p class="sub" data-t="sub">Obrigada por testares o jogo. Seis perguntas, dois minutos. A honestidade ajuda mais do que os elogios.</p>
