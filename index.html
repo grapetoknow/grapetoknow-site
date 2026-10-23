@@ -49,8 +49,7 @@ p{margin:0}
 /* menu */
 .top{position:sticky;top:0;z-index:20;background:rgba(29,19,27,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;gap:20px;min-height:68px}
-.marca{font-family:var(--display);font-weight:800;font-size:22px;color:var(--cream);text-decoration:none;white-space:nowrap;font-variation-settings:"SOFT" 50,"WONK" 1}
-.marca i{font-weight:700;color:var(--cream);background:var(--red);padding:0 .18em;margin:0 .08em;border-radius:3px 8px 4px 9px;display:inline-block;transform:rotate(-4deg)}
+.marca{font-family:var(--display);font-weight:800;font-size:22px;line-height:1;letter-spacing:-.025em;color:var(--cream);text-decoration:none;white-space:nowrap;font-variation-settings:"SOFT" 50,"WONK" 1,"opsz" 144;display:inline-flex;align-items:baseline;column-gap:.2em}
 .menu{display:flex;gap:4px;margin-left:auto}
 .menu a{text-decoration:none;color:var(--mauve);font-weight:600;font-size:15px;padding:8px 12px;border-radius:999px}
 .menu a:hover{color:var(--cream);background:rgba(251,243,230,.07)}
@@ -205,7 +204,7 @@ footer{border-top:1px solid var(--line);margin-top:clamp(56px,8vw,96px)}
 .pe h4{margin:0 0 10px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--pink)}
 .pe p,.pe a{color:var(--mauve);font-size:15px;text-decoration:none;display:block;line-height:1.9}
 .pe a:hover{color:var(--cream)}
-.pe .marca{font-size:26px;display:inline-block;margin-bottom:6px;color:var(--cream);line-height:1.2}
+.pe .marca{font-size:26px;display:inline-flex;margin-bottom:6px;color:var(--cream);line-height:1.2}
 .pe-fim{border-top:1px solid var(--line);padding-block:18px 32px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;color:var(--mauve);font-size:13.5px}
 
 @media (max-width:960px){ .menu{display:none} }
@@ -241,7 +240,7 @@ footer{border-top:1px solid var(--line);margin-top:clamp(56px,8vw,96px)}
 
 <header class="top">
   <div class="wrap">
-    <a class="marca" href="#topo" aria-label="Grape to Know">Grape <i>to</i> Know</a>
+    <a class="marca" href="#topo" aria-label="Grape to Know"><span>Grape</span><i class="logo-to"><svg class="pincel" viewBox="0 0 120 60" preserveAspectRatio="none" aria-hidden="true"><path d="M6 20 C18 10 52 8 82 7 C96 6 108 6 116 9 L113 15 L118 19 L112 26 L117 31 L110 37 L114 43 C96 50 64 52 40 54 C26 55 14 56 4 52 L9 46 L2 41 L8 35 L3 29 Z"/></svg><span>to</span></i><span>Know</span></a>
     <nav class="menu" aria-label="Menu">
       <a href="#jogo" data-t="nav-jogo">O jogo</a>
       <a href="#como" data-t="nav-como">Como funciona</a>
@@ -414,7 +413,7 @@ footer{border-top:1px solid var(--line);margin-top:clamp(56px,8vw,96px)}
 <footer>
   <div class="wrap pe">
     <div>
-      <a class="marca" href="#topo">Grape <i>to</i> Know</a>
+      <a class="marca" href="#topo" aria-label="Grape to Know"><span>Grape</span><i class="logo-to"><svg class="pincel" viewBox="0 0 120 60" preserveAspectRatio="none" aria-hidden="true"><path d="M6 20 C18 10 52 8 82 7 C96 6 108 6 116 9 L113 15 L118 19 L112 26 L117 31 L110 37 L114 43 C96 50 64 52 40 54 C26 55 14 56 4 52 L9 46 L2 41 L8 35 L3 29 Z"/></svg><span>to</span></i><span>Know</span></a>
       <p data-t="foot-tag">Prova o que sabes. Um jogo para aprender sobre vinho a jogar, feito em Portugal.</p>
     </div>
     <div>
